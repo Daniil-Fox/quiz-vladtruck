@@ -35,6 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
     contentSlider = new Swiper(contentEl, {
       loop: false,
       speed: 400,
+      spaceBetween: 50,
+
+      on: {
+        slideChange: (swiper) => {
+          spans[0].textContent = swiper.activeIndex + 1;
+        },
+      },
     });
 
     imgSlider = new Swiper(imgEl, {

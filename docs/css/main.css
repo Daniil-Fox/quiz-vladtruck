@@ -941,6 +941,7 @@ a {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  gap: 2rem;
   max-width: 100%;
   min-width: 0;
 }

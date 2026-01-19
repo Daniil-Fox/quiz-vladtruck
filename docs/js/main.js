@@ -16837,7 +16837,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contentEl && imgEl) {
     contentSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(contentEl, {
       loop: false,
-      speed: 400
+      speed: 400,
+      spaceBetween: 50,
+      on: {
+        slideChange: swiper => {
+          spans[0].textContent = swiper.activeIndex + 1;
+        }
+      }
     });
     imgSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(imgEl, {
       loop: false,
