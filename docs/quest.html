@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru" class="page">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#111111" />
+  <title>Quiz</title>
+  <link
+    rel="preload"
+    href="fonts/Onest-Light.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Onest-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Onest-Medium.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Onest-SemiBold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Geologica-Light.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link rel="stylesheet" href="css/vendor.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script defer src="js/main.js"></script>
+</head>
+
+
+  <body class="page__body">
+    <div class="site-container">
+      <main class="main">
+        <section class="quest">
+          <div class="quest__wrapper">
+            <div class="quest__content">
+              <div class="quest__steps">шаг <span>1</span>/<span>6</span></div>
+
+              <form
+                action="#"
+                method="post"
+                data-page="/thank.html"
+                class="quest__quiz quiz swiper swiper-no-swiping"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <p class="quiz__question">
+                      укажите город, в&nbsp;который нужно доставить автомобиль
+                    </p>
+                    <div class="quiz__field">
+                      <input
+                        type="text"
+                        name="Город"
+                        placeholder="Ваш город"
+                        class="quiz__input"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <p class="quiz__question">
+                      какой год выпуска рассматриваете?
+                    </p>
+                    <div class="quiz__field">
+                      <p class="quiz__capture">Год выпуска</p>
+                      <div id="year-slider" class="year-slider"></div>
+                      <div class="year-values">
+                        <span class="year-min">1990</span>
+                        <span class="year-max">2026</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <p class="quiz__question">
+                      Какой объем двигателя вам подходит?
+                    </p>
+                    <div class="quiz__field">
+                      <label class="quiz__label checkbox">
+                        <input
+                          type="radio"
+                          class="visually-hidden"
+                          name="Объем двигателя"
+                          value="малолитражный (0.7-1.8 л)"
+                          required
+                        />
+                        <div></div>
+                        <span>малолитражный (0.7-1.8 л)</span>
+                      </label>
+                      <label class="quiz__label checkbox">
+                        <input
+                          type="radio"
+                          class="visually-hidden"
+                          name="Объем двигателя"
+                          value="среднелитражный (1.8-3.5 л)"
+                          required
+                        />
+                        <div></div>
+                        <span>среднелитражный (1.8-3.5 л)</span>
+                      </label>
+                      <label class="quiz__label checkbox">
+                        <input
+                          type="radio"
+                          class="visually-hidden"
+                          name="Объем двигателя"
+                          value="rрупнолитражный (более 3.5 л)"
+                          required
+                        />
+                        <div></div>
+                        <span>rрупнолитражный (более 3.5 л)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <p class="quiz__question">
+                      Какой у&nbsp;вас планируемый&nbsp;бюджет на&nbsp;покупку?
+                    </p>
+                    <div class="quiz__field">
+                      <input
+                        type="number"
+                        name="Бюджет"
+                        min="0"
+                        placeholder="Бюджет"
+                        class="quiz__input"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <p class="quiz__question">
+                      Укажите марку и&nbsp;модель авто, если
+                      уже&nbsp;определились с&nbsp;выбором
+                    </p>
+                    <div class="quiz__field">
+                      <input
+                        type="text"
+                        name="Марка и модель авто"
+                        placeholder="Марка и модель авто"
+                        class="quiz__input"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <p class="quiz__question">
+                      Оставьте свои контактные данные
+                    </p>
+                    <p class="quiz__desc">
+                      В ближайшее время менеджер вышлет вам подборку подходящих
+                      автомобилей
+                    </p>
+                    <div class="quiz__field">
+                      <input
+                        type="text"
+                        name="Имя"
+                        placeholder="Имя"
+                        class="quiz__input"
+                        required
+                      />
+                    </div>
+                    <div class="quiz__field">
+                      <input
+                        type="tel"
+                        name="Телефон"
+                        placeholder="Телефон"
+                        class="quiz__input"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div class="quiz__actions">
+                <button
+                  class="quiz-btn quiz-btn_grey btn-reset quiz__btn quiz__btn_prev"
+                  disabled
+                >
+                  назад
+                </button>
+                <button class="quiz-btn btn-reset quiz__btn quiz__btn_next">
+                  далее
+                </button>
+              </div>
+            </div>
+            <div class="quest__img swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./img/quest/01.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/quest/02.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/quest/03.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/quest/04.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/quest/05.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/quest/06.webp" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+  <div class="container"></div>
+</footer>
+
+    </div>
+  </body>
+</html>

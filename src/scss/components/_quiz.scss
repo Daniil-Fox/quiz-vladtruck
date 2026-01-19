@@ -1,0 +1,232 @@
+.quiz {
+  &__btn {
+    min-width: 20.2rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 2rem;
+  }
+  &__desc {
+    margin: 0;
+    margin-bottom: 5rem;
+
+    font-weight: 300;
+    font-size: 2.2rem;
+    line-height: 150%;
+    color: var(--vt-black);
+  }
+  &__field {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  &__question {
+    margin: 0;
+    margin-bottom: 5rem;
+    font-weight: 600;
+    font-size: 6rem;
+    line-height: 100%;
+    text-transform: lowercase;
+    color: #000;
+  }
+
+  &__capture {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    font-size: 2.2rem;
+    line-height: 150%;
+    color: var(--vt-black);
+  }
+  &__tg {
+    padding: 1.4rem 7rem 1.7rem;
+  }
+  &__qr {
+    width: 24.8rem;
+    aspect-ratio: 1 / 1;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  input {
+    width: 100%;
+    height: 6rem;
+    padding: 0 2rem;
+    border: none;
+    border-radius: 1rem;
+    font-weight: 300;
+    font-size: 2.2rem;
+    background-color: #fafafa;
+    color: #000;
+
+    &:active {
+      background-color: #fafafa;
+      color: #000;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+      outline: none;
+      background-color: #fafafa;
+      color: #000;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 16rem;
+    padding: 2rem;
+    border: none;
+    outline: 0;
+    border-radius: 1rem;
+    background-color: #fafafa;
+    font-weight: 300;
+    font-size: 2.2rem;
+    color: rgba(0, 0, 0, 0.25);
+    resize: none;
+
+    &:active {
+      background-color: #fafafa;
+      color: #000;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+      outline: none;
+      background-color: #fafafa;
+      color: #000;
+    }
+  }
+
+  /* year slider (noUiSlider) styling */
+  .year-slider {
+    width: 97%;
+    margin: 0 auto;
+    position: relative;
+    height: 2.4rem;
+    margin-bottom: 0.8rem;
+    padding: 0 1.2rem; /* space for end circles and handle */
+
+    &.noUi-target {
+      height: 2.4rem;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    /* track */
+    .noUi-base,
+    .noUi-connect {
+      height: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 2px;
+    }
+
+    .noUi-connect {
+      background: #000;
+    }
+
+    /* draggable handle */
+    .noUi-handle {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background: #000;
+      border: none;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      box-shadow: none;
+      &:active {
+        cursor: grabbing;
+      }
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    /* remove default inner focus outline and style tooltip text */
+    .noUi-handle:focus {
+      outline: none;
+    }
+
+    .noUi-tooltip {
+      font-size: 1.6rem;
+      line-height: 1;
+      padding: 0.2rem 0.6rem;
+      background: transparent;
+      color: #000;
+      top: -2.2rem;
+    }
+  }
+
+  .year-values {
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: 300;
+    font-size: 2.2rem;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.45);
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: 2.2rem;
+  line-height: 110%;
+  color: var(--vt-black);
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  div {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+    border: 2px solid #bebebe;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      aspect-ratio: 1 / 1;
+      background-color: var(--vt-red);
+      border-radius: 0.4rem;
+      opacity: 0;
+    }
+  }
+
+  input {
+    height: 0;
+    padding: 0;
+  }
+
+  input:checked ~ div::after {
+    opacity: 1;
+  }
+}

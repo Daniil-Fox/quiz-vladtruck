@@ -1,0 +1,16 @@
+:root {
+  --font-family: "Onest", sans-serif;
+  --second-family: "Geologica", sans-serif;
+  --content-width: 100%;
+  --container-offset: 8rem;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --vt-red: #ff1500;
+  --vt-black: #000;
+  --vt-white: #fff;
+  --30-black: #f7f7f7;
+
+  @media screen and (max-width: 576px) {
+    --container-offset: 3rem;
+  }
+}

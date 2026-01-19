@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      <main class="main">
+        <section class="quest">
+          <div class="quest__wrapper">
+            <div class="quest__content">
+              <p class="quiz__question">приняли вашу заявку</p>
+
+              <div class="quest__thank quiz">
+                <p class="quiz__desc">
+                  Подписывайтесь на&nbsp;наш&nbsp;телеграм, там&nbsp;свежие
+                  новости по&nbsp;утильсбору @vlad_truck
+                </p>
+                <div class="quiz__qr">
+                  <img src="./img/qr.svg" alt="" />
+                </div>
+              </div>
+
+              <div class="quiz__actions">
+                <button class="quiz-btn btn-reset quiz__tg">
+                  перейти в telegram
+                </button>
+              </div>
+            </div>
+            <div class="quest__img">
+              <img src="./img/thank.webp" alt="" />
+            </div>
+          </div>
+        </section>
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

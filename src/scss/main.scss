@@ -1,0 +1,12 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/quiz-header";
+@import "./components/quiz-hero";
+@import "./components/quiz-menu";
+@import "./components/quiz";
+@import "./components/quest";

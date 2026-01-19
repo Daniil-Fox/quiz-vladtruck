@@ -1,0 +1,58 @@
+<header class="quiz-header">
+  <div class="quiz-container quiz-header__container">
+    <a href="/" class="quiz-header__logo">
+      <img src="./img/svg/logo.svg" alt="" />
+    </a>
+    <a href="/" class="quiz-header__logo quiz-header__logo_mob">
+      <img src="./img/svg/logo-mob.svg" alt="" />
+    </a>
+
+    <nav class="quiz-header__nav quiz-nav">
+      <ul>
+        <li>
+          <a href="#">о&nbsp;компании</a>
+        </li>
+        <li>
+          <a href="#">калькулятор</a>
+        </li>
+        <li>
+          <a href="#">контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <ul class="list-reset quiz-header__socials">
+      <li>
+        <a href="#">
+          <svg class="" width="28" height="28">
+            <use xlink:href="img/sprite.svg#btn-telegram"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg class="" width="28" height="28">
+            <use xlink:href="img/sprite.svg#btn-vk"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg class="" width="28" height="28">
+            <use xlink:href="img/sprite.svg#btn-youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <button
+      class="btn-reset burger quiz-header__burger"
+      aria-label="Открыть меню"
+      aria-expanded="false"
+      data-burger
+    >
+      <span class="burger__line"></span>
+    </button>
+  </div>
+  @include('./menu.html')
+</header>

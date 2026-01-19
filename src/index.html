@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="main">
+        <section class="quiz-hero">
+          <div class="quiz-hero__gallery swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="./img/hero/01-mob.webp"
+                    type="image/webp"
+                    media="(max-width: 576px)"
+                  />
+                  <source srcset="./img/hero/01.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="./img/hero/01.webp"
+                    class="image"
+                    width=""
+                    height=""
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="./img/hero/02-mob.webp"
+                    type="image/webp"
+                    media="(max-width: 576px)"
+                  />
+                  <source srcset="./img/hero/02.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="./img/hero/02.webp"
+                    class="image"
+                    width=""
+                    height=""
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="./img/hero/03-mob.webp"
+                    type="image/webp"
+                    media="(max-width: 576px)"
+                  />
+                  <source srcset="./img/hero/03.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="./img/hero/03.webp"
+                    class="image"
+                    width=""
+                    height=""
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-container">
+            <div class="quiz-hero__content">
+              <h1 class="quiz-hero__title">Быстрый подбор авто за 60 секунд</h1>
+              <ul class="list-reset quiz-hero__list">
+                <li>
+                  <img src="./img/svg/delivery.svg" alt="" />
+                  доставка авто до 20 дней
+                </li>
+                <li>
+                  <img src="./img/svg/back.svg" alt="" />
+                  возвратный залог
+                </li>
+                <li>
+                  <img src="./img/svg/park.svg" alt="" />
+                  бесплатная парковка для авто
+                </li>
+              </ul>
+              <a href="#" class="btn-reset quiz-btn quiz-hero__btn">
+                Пройти тест
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

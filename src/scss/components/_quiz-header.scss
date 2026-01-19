@@ -1,0 +1,155 @@
+// ваш код
+.quiz-header {
+  padding: 6rem 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  @include mobile {
+    padding: 6rem 3rem;
+  }
+  &__logo {
+    display: block;
+    width: 18rem;
+    height: 2.4rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    @include mobile {
+      display: none;
+    }
+    &_mob {
+      display: none;
+
+      @include mobile {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: block;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url("./../img/svg/logo-fill.svg");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0;
+
+          transition-duration: 0.3s;
+          transition-property: opacity;
+          transition-timing-function: ease;
+        }
+      }
+    }
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    position: relative;
+    z-index: 99;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 2rem;
+
+    @include mobile {
+      display: none;
+    }
+    a {
+      display: block;
+      width: 2.8rem;
+      height: 2.8rem;
+      color: var(--vt-white);
+      transition-property: color;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+      }
+
+      @include hover {
+        color: var(--vt-black);
+      }
+
+      &:focus-visible {
+        outline: none;
+        color: var(--vt-black);
+      }
+    }
+  }
+
+  &__nav {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include mobile {
+      display: block;
+
+      @include burger;
+    }
+  }
+}
+
+.quiz-nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 3rem;
+    }
+    li a {
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 110%;
+      color: var(--vt-white);
+
+      transition-property: color;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      @include mobile {
+        color: var(--vt-black);
+      }
+      @include hover {
+        color: var(--vt-red);
+      }
+
+      &:focus-visible {
+        outline: none;
+        color: var(--vt-red);
+      }
+
+      &:active {
+        color: var(--vt-red);
+      }
+    }
+  }
+}

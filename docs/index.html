@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru" class="page">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#111111" />
+  <title>Quiz</title>
+  <link
+    rel="preload"
+    href="fonts/Onest-Light.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Onest-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Onest-Medium.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Onest-SemiBold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Geologica-Light.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link rel="stylesheet" href="css/vendor.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script defer src="js/main.js"></script>
+</head>
+
+
+  <body class="page__body">
+    <div class="site-container">
+      <header class="quiz-header">
+  <div class="quiz-container quiz-header__container">
+    <a href="/" class="quiz-header__logo">
+      <img src="./img/svg/logo.svg" alt="" />
+    </a>
+    <a href="/" class="quiz-header__logo quiz-header__logo_mob">
+      <img src="./img/svg/logo-mob.svg" alt="" />
+    </a>
+
+    <nav class="quiz-header__nav quiz-nav">
+      <ul>
+        <li>
+          <a href="#">о&nbsp;компании</a>
+        </li>
+        <li>
+          <a href="#">калькулятор</a>
+        </li>
+        <li>
+          <a href="#">контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <ul class="list-reset quiz-header__socials">
+      <li>
+        <a href="#">
+          <svg class="" width="28" height="28">
+            <use xlink:href="img/sprite.svg#btn-telegram"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg class="" width="28" height="28">
+            <use xlink:href="img/sprite.svg#btn-vk"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg class="" width="28" height="28">
+            <use xlink:href="img/sprite.svg#btn-youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <button
+      class="btn-reset burger quiz-header__burger"
+      aria-label="Открыть меню"
+      aria-expanded="false"
+      data-burger
+    >
+      <span class="burger__line"></span>
+    </button>
+  </div>
+  <div class="quiz-menu" data-menu>
+  <div class="quiz-menu__overlay" data-menu-overlay></div>
+
+  <div class="quiz-menu__content">
+    <nav class="quiz-nav">
+      <ul>
+        <li data-menu-item>
+          <a href="#">о&nbsp;компании</a>
+        </li>
+        <li data-menu-item>
+          <a href="#">калькулятор</a>
+        </li>
+        <li data-menu-item>
+          <a href="#">контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a href="#" class="btn btn-reset quiz-btn"> оставить заявку </a>
+  </div>
+</div>
+
+</header>
+
+      <main class="main">
+        <section class="quiz-hero">
+          <div class="quiz-hero__gallery swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="./img/hero/01-mob.webp"
+                    type="image/webp"
+                    media="(max-width: 576px)"
+                  />
+                  <source srcset="./img/hero/01.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="./img/hero/01.webp"
+                    class="image"
+                    width=""
+                    height=""
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="./img/hero/02-mob.webp"
+                    type="image/webp"
+                    media="(max-width: 576px)"
+                  />
+                  <source srcset="./img/hero/02.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="./img/hero/02.webp"
+                    class="image"
+                    width=""
+                    height=""
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="./img/hero/03-mob.webp"
+                    type="image/webp"
+                    media="(max-width: 576px)"
+                  />
+                  <source srcset="./img/hero/03.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="./img/hero/03.webp"
+                    class="image"
+                    width=""
+                    height=""
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-container">
+            <div class="quiz-hero__content">
+              <h1 class="quiz-hero__title">Быстрый подбор авто за 60 секунд</h1>
+              <ul class="list-reset quiz-hero__list">
+                <li>
+                  <img src="./img/svg/delivery.svg" alt="" />
+                  доставка авто до 20 дней
+                </li>
+                <li>
+                  <img src="./img/svg/back.svg" alt="" />
+                  возвратный залог
+                </li>
+                <li>
+                  <img src="./img/svg/park.svg" alt="" />
+                  бесплатная парковка для авто
+                </li>
+              </ul>
+              <a href="#" class="btn-reset quiz-btn quiz-hero__btn">
+                Пройти тест
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+  <div class="container"></div>
+</footer>
+
+    </div>
+  </body>
+</html>
