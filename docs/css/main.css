@@ -691,6 +691,13 @@ a {
   display: flex;
   gap: 2rem;
 }
+@media (max-width: 576px) {
+  .quiz__actions > * {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
 .quiz__desc {
   margin: 0;
   margin-bottom: 5rem;
@@ -698,6 +705,11 @@ a {
   font-size: 2.2rem;
   line-height: 150%;
   color: var(--vt-black);
+}
+@media (max-width: 576px) {
+  .quiz__desc {
+    margin-bottom: 4rem;
+  }
 }
 .quiz__field:not(:last-child) {
   margin-bottom: 2rem;
@@ -710,6 +722,12 @@ a {
   line-height: 100%;
   text-transform: lowercase;
   color: #000;
+}
+@media (max-width: 576px) {
+  .quiz__question {
+    font-size: 4.4rem;
+    margin-bottom: 4rem;
+  }
 }
 .quiz__capture {
   margin: 0;
@@ -725,6 +743,11 @@ a {
 .quiz__qr {
   width: 24.8rem;
   aspect-ratio: 1/1;
+}
+@media (max-width: 576px) {
+  .quiz__qr {
+    display: none;
+  }
 }
 .quiz__qr img {
   display: block;
@@ -928,6 +951,20 @@ a {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
 }
+@media (max-width: 576px) {
+  .quest__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
 .quest__content {
   padding: var(--container-offset);
   padding-right: 12rem;
@@ -944,6 +981,22 @@ a {
   gap: 2rem;
   max-width: 100%;
   min-width: 0;
+}
+@media (max-width: 576px) {
+  .quest__content {
+    padding: 4rem;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+@media (max-width: 576px) {
+  .quest__content_thank {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 0;
+  }
 }
 .quest__quiz {
   width: 100%;
@@ -962,6 +1015,13 @@ a {
   width: 100%;
   max-width: 100%;
   min-width: 0;
+}
+@media (max-width: 576px) {
+  .quest__img {
+    max-height: 45rem;
+    -ms-flex-preferred-size: 45rem;
+    flex-basis: 45rem;
+  }
 }
 .quest__img .swiper-wrapper,
 .quest__img .swiper-slide {

@@ -6,6 +6,12 @@
   &__actions {
     display: flex;
     gap: 2rem;
+
+    @include mobile {
+      & > * {
+        flex: 1;
+      }
+    }
   }
   &__desc {
     margin: 0;
@@ -15,6 +21,10 @@
     font-size: 2.2rem;
     line-height: 150%;
     color: var(--vt-black);
+
+    @include mobile {
+      margin-bottom: 4rem;
+    }
   }
   &__field {
     &:not(:last-child) {
@@ -29,6 +39,11 @@
     line-height: 100%;
     text-transform: lowercase;
     color: #000;
+
+    @include mobile {
+      font-size: 4.4rem;
+      margin-bottom: 4rem;
+    }
   }
 
   &__capture {
@@ -42,10 +57,13 @@
   &__tg {
     padding: 1.4rem 7rem 1.7rem;
   }
+
   &__qr {
     width: 24.8rem;
     aspect-ratio: 1 / 1;
-
+    @include mobile {
+      display: none;
+    }
     img {
       display: block;
       width: 100%;
