@@ -102,6 +102,9 @@
 .page__body.quiz-menu-open .quiz-header__burger {
   color: var(--vt-black);
 }
+.page__body.quiz-menu-open .quiz-menu {
+  pointer-events: all;
+}
 .page__body.quiz-menu-open .quiz-menu__overlay {
   opacity: 1;
 }
@@ -635,9 +638,11 @@ a {
   width: 100%;
   height: 100svh;
   z-index: 80;
+  pointer-events: none;
 }
 .quiz-menu__overlay {
   position: absolute;
+  pointer-events: none;
   left: 0;
   top: 0;
   width: 100%;
