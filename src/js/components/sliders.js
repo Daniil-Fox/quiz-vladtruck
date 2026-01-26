@@ -67,8 +67,84 @@ document.addEventListener("DOMContentLoaded", () => {
     const telInputsAll = contentEl.querySelectorAll('input[type="tel"]');
     for (const tel of telInputsAll) {
       try {
-        const im = new Inputmask("+7 (999) 999-99-99");
+        const im = new Inputmask("+7 (999) 999-99-99", {
+          // Позволяет вводить номер без маски (например, 79507918999)
+          showMaskOnHover: false,
+          showMaskOnFocus: false,
+
+          // Обработка ввода без учета маски
+          onBeforePaste: function (pastedValue, opts) {
+            // Очищаем от всех символов кроме цифр
+            let cleaned = pastedValue.replace(/\D/g, "");
+
+            // Если начинается с 8, заменяем на 7
+            if (cleaned.startsWith("8")) {
+              cleaned = "7" + cleaned.slice(1);
+            }
+
+            // Если начинается с 7, убираем её (маска сама добавит +7)
+            if (cleaned.startsWith("7")) {
+              cleaned = cleaned.slice(1);
+            }
+
+            return cleaned;
+          },
+
+          onBeforeMask: function (value, opts) {
+            // Очищаем от всех символов кроме цифр
+            let cleaned = value.replace(/\D/g, "");
+
+            // Если начинается с 8, заменяем на 7
+            if (cleaned.startsWith("8")) {
+              cleaned = "7" + cleaned.slice(1);
+            }
+
+            // Если начинается с 7, убираем её (маска сама добавит +7)
+            if (cleaned.startsWith("7")) {
+              cleaned = cleaned.slice(1);
+            }
+
+            return cleaned;
+          },
+
+          // Автоматически подставляем 9 после +7 (
+          onKeyValidation: function (key, result) {
+            const input = this;
+            const currentValue = input.value;
+
+            // Если позиция после "+7 (" и там пусто, подставляем 9
+            if (currentValue === "+7 (") {
+              setTimeout(() => {
+                input.value = "+7 (9";
+                // Устанавливаем курсор после 9
+                const pos = 5;
+                input.setSelectionRange(pos, pos);
+              }, 0);
+            }
+          },
+        });
+
         im.mask(tel);
+
+        // Дополнительный обработчик для автоподстановки 9
+        tel.addEventListener("input", function (e) {
+          if (this.value === "+7 (") {
+            this.value = "+7 (9";
+            const pos = 5;
+            this.setSelectionRange(pos, pos);
+          }
+        });
+
+        // Обработка фокуса - если поле пустое, ставим +7 (9
+        tel.addEventListener("focus", function (e) {
+          if (!this.value || this.value === "+7 (___) ___-__-__") {
+            setTimeout(() => {
+              this.value = "+7 (9";
+              const pos = 5;
+              this.setSelectionRange(pos, pos);
+            }, 0);
+          }
+        });
       } catch (e) {
         // ignore if mask fails
       }

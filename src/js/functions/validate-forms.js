@@ -1,4 +1,4 @@
-import JustValidate from 'just-validate';
+import JustValidate from "just-validate";
 import Inputmask from "../../../node_modules/inputmask/dist/inputmask.es6.js";
 
 export const validateForms = (selector, rules, checkboxes = [], afterSend) => {
@@ -6,28 +6,41 @@ export const validateForms = (selector, rules, checkboxes = [], afterSend) => {
   const telSelector = form?.querySelector('input[type="tel"]');
 
   if (!form) {
-    console.error('Нет такого селектора!');
+    console.error("Нет такого селектора!");
     return false;
   }
 
   if (!rules) {
-    console.error('Вы не передали правила валидации!');
+    console.error("Вы не передали правила валидации!");
     return false;
   }
 
   if (telSelector) {
-    const inputMask = new Inputmask('+7 (999) 999-99-99');
+    const inputMask = new Inputmask({
+      mask: "+7 (999) 999-99-99",
+      definitions: {
+        9: {
+          validator: function (ch, maskset, pos) {
+            if (pos === 4) return /[3-7]/.test(ch);
+            if (pos === 5) return /[0-8]/.test(ch);
+            if (pos === 6) return ch === "9";
+            return /[0-9]/.test(ch);
+          },
+          cardinality: 1,
+        },
+      },
+    });
     inputMask.mask(telSelector);
 
     for (let item of rules) {
       if (item.tel) {
         item.rules.push({
-          rule: 'function',
-          validator: function() {
+          rule: "function",
+          validator: function () {
             const phone = telSelector.inputmask.unmaskedvalue();
             return phone.length === 10;
           },
-          errorMessage: item.telError
+          errorMessage: item.telError,
         });
       }
     }
@@ -36,17 +49,12 @@ export const validateForms = (selector, rules, checkboxes = [], afterSend) => {
   const validation = new JustValidate(selector);
 
   for (let item of rules) {
-    validation
-      .addField(item.ruleSelector, item.rules);
+    validation.addField(item.ruleSelector, item.rules);
   }
 
   if (checkboxes.length) {
     for (let item of checkboxes) {
-      validation
-        .addRequiredGroup(
-          `${item.selector}`,
-          `${item.errorMessage}`
-        )
+      validation.addRequiredGroup(`${item.selector}`, `${item.errorMessage}`);
     }
   }
 
@@ -61,15 +69,14 @@ export const validateForms = (selector, rules, checkboxes = [], afterSend) => {
           if (afterSend) {
             afterSend();
           }
-          console.log('Отправлено');
+          console.log("Отправлено");
         }
       }
-    }
+    };
 
-    xhr.open('POST', 'mail.php', true);
+    xhr.open("POST", "mail.php", true);
     xhr.send(formData);
 
     ev.target.reset();
-  })
-
+  });
 };
