@@ -238,7 +238,24 @@
       opacity: 0;
     }
   }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
 
+    @include hover {
+      color: var(--vt-red);
+    }
+    &:focus-visible {
+      outline: none;
+      color: var(--vt-red);
+    }
+    &:active {
+      color: var(--vt-red);
+    }
+  }
   input {
     height: 0;
     padding: 0;
@@ -246,5 +263,9 @@
 
   input:checked ~ div::after {
     opacity: 1;
+  }
+
+  &_agree {
+    font-size: 1.8rem;
   }
 }

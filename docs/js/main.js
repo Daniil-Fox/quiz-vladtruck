@@ -16820,19 +16820,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const steps = document.querySelector(".quest__steps");
   const spans = steps ? steps.querySelectorAll("span") : [];
   const heroSlider = document.querySelector(".quiz-hero__gallery");
-  if (heroSlider) {
-    const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(heroSlider, {
-      loop: true,
-      speed: 800,
-      autoplay: {
-        delay: 3000
-      },
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true
-      }
-    });
-  }
+
+  // if (heroSlider) {
+  //   const swiper = new Swiper(heroSlider, {
+  //     loop: true,
+  //     speed: 800,
+
+  //     autoplay: {
+  //       delay: 3000,
+  //     },
+  //     effect: "fade",
+  //     fadeEffect: {
+  //       crossFade: true,
+  //     },
+  //   });
+  // }
+
   let contentSlider, imgSlider;
   if (contentEl && imgEl) {
     contentSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(contentEl, {
