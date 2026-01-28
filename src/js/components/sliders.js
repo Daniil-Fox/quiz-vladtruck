@@ -6,6 +6,20 @@ import Inputmask from "../../../node_modules/inputmask/dist/inputmask.es6.js";
 Swiper.use([Autoplay, EffectFade, Controller, Navigation]);
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Fill UTM parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const utmFields = [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+  ];
+  utmFields.forEach((field) => {
+    const el = document.getElementById(field);
+    if (el) el.value = urlParams.get(field) || "";
+  });
+
   const contentEl = document.querySelector(".quest .quiz.swiper");
   const imgEl = document.querySelector(".quest__img.swiper");
   const prevBtn = document.querySelector(".quiz__btn_prev");
@@ -247,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const submitForm = async () => {
       const form = contentEl.closest("form");
       if (!form) return;
-      const action = form.getAttribute("action") || window.location.href;
+      const action = "/mail.php";
       const method = (form.getAttribute("method") || "POST").toUpperCase();
       const formData = new FormData(form);
       try {
@@ -278,6 +292,20 @@ document.addEventListener("DOMContentLoaded", () => {
     contentEl.addEventListener("input", updateNavState);
     contentEl.addEventListener("change", updateNavState);
 
+    // Allow Enter to proceed to next slide or submit
+    document.body.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        nextBtn.click();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        prevBtn.click();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        nextBtn.click();
+      }
+    });
+
     updateNavState();
   }
 
@@ -300,6 +328,11 @@ document.addEventListener("DOMContentLoaded", () => {
     yearSliderEl.noUiSlider.on("update", (values) => {
       if (yearMinEl) yearMinEl.textContent = values[0];
       if (yearMaxEl) yearMaxEl.textContent = values[1];
+      // Update hidden inputs
+      const minHidden = document.getElementById("year-min-hidden");
+      const maxHidden = document.getElementById("year-max-hidden");
+      if (minHidden) minHidden.value = values[0];
+      if (maxHidden) maxHidden.value = values[1];
     });
   }
 });
